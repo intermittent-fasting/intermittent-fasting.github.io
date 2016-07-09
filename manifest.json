@@ -1,0 +1,33 @@
+{
+  "name": "Intermittent Fasting Tracker",
+  "short_name": "I Fasting",
+  "start_url": "/?homescreen=1",
+  "display": "standalone",
+  "background_color": "#73d216",
+  "theme_color": "#73d216",
+  "icons": [{
+    "src": "assets/images/icon_48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "assets/images/icon_72.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }, {
+    "src": "assets/images/icon_96.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }, {
+    "src": "assets/images/icon_144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "assets/images/icon_168.png",
+    "sizes": "168x168",
+    "type": "image/png"
+  }, {
+    "src": "assets/images/icon_192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}
