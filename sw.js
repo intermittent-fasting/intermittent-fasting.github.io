@@ -1,6 +1,8 @@
+var staticCache = 'ifast-v2';
+
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open('ifast').then(cache => {
+    caches.open(staticCache).then(cache => {
       return cache.addAll([
         '/',
         '/index.html',
@@ -18,7 +20,17 @@ self.addEventListener('install', e => {
 });
 
 self.addEventListener('activate',  event => {
-  event.waitUntil(self.clients.claim());
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          return cacheName.startsWith('ifast-') && cacheName != staticCache
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
 });
 
 self.addEventListener('fetch', event => {
@@ -28,3 +40,11 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
+// setInterval(function(){
+//     self.registration.showNotification("title", {
+//       body: 'The Message',
+//       icon: 'images/icon.png',
+//       tag: 'my-tag'
+//     });
+// }, 10000);

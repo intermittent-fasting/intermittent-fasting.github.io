@@ -1,5 +1,5 @@
 window.appVersion = '0.0.1';
-window.appCommit = '81e651d';
+window.appCommit = '3ed0195';
 
 (function(context, $){
   'use strict';
@@ -89,7 +89,7 @@ window.appCommit = '81e651d';
   }
 
   function setupSettings() {
-    $('#version').text(context.appVersion + ' - ' + window.appCommit);
+    $('#version').text(context.appVersion + '(' + window.appCommit +')');
     $('#notifications').prop('checked', config.notificationsEnabled);
     $('#startTimeSetting').val(config.startTime)
     $('#endTimeSetting').val(config.endTime)

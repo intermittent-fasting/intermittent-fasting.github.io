@@ -1,6 +1,33 @@
 html, body {
-  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-family: "Roboto","Helvetica","Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 0;
+  margin: 0;
+}
+header {
+  height: 56px;
+  color: #fff;
+  background: #73d216;
+}
+header h1 {
+  font-size: 20px;
+  font-weight: normal;;
+  margin: 0;
+  padding: 16px 0 0 1em;
 }
 .b {
   font-weight: bold;
+}
+.page-content {
+  margin: 1em;
+}
+.dashboard {
+  font-size: 1.4em;
+  line-height: 3em;
+}
+.sub {
+  font-size: 0.8em;
+  color: silver;
 }

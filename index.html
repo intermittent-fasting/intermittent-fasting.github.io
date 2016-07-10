@@ -27,24 +27,35 @@
 
 </head>
 <body>
-    <div><label>Now</label> <span class="b" id="currentTimeExact"></span></div>
-    <div><label>Fasting ends</label> <span id="endTimeExact"></span>, <span class="b" id="endTime"></span></div>
-    <div><label>Fasting starts</label> <span id="startTimeExact"></span>, <span class="b" id="startTime"></span></div>
+    <header>
+        <h1>Intermittent Fasting Tracker</h1>
+    </header>
 
-    <h2>Settings</h2>
-    <div>
-    <label>Notifications: <input type="checkbox" name="notifications" id="notifications" /></label>
+    <div class="page-content">
+        <div class="dashboard">
+            <div><label>Now</label> <span class="b" id="currentTimeExact"></span></div>
+            <div><label>Fasting ends</label> <span id="endTimeExact"></span>, <span class="b" id="endTime"></span></div>
+            <div><label>Fasting starts</label> <span id="startTimeExact"></span>, <span class="b" id="startTime"></span></div>
+        </div>
+        <hr/>
+
+        <h2>Settings</h2>
+        <div>
+        <label>Notifications: <input type="checkbox" name="notifications" id="notifications" /></label>
+        </div>
+        <div>
+        <label>Start Time: <input type="time" id="startTimeSetting" step="900" required /></label>
+        </div>
+        <div>
+        <label>End Time: <input type="time" id="endTimeSetting" step="900" required /></label>
+        </div>
+        <div>
+        <button id="save">Save</button>
+        </div>
+        <div class="sub">Version: <span id="version"></span></div>
+
     </div>
-    <div>
-    <label>Start Time: <input type="time" id="startTimeSetting" step="900" required /></label>
-    </div>
-    <div>
-    <label>End Time: <input type="time" id="endTimeSetting" step="900" required /></label>
-    </div>
-    <div>
-    <button id="save">Save</button>
-    <div>Version: <span id="version"></span></div>
-    </div>
+
 
     <script src="assets/js/bower/jquery/dist/jquery.min.js"></script>
     <script src="assets/js/bower/moment/moment.js"></script>
