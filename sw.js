@@ -1,8 +1,8 @@
-var staticCache = 'ifast-v2';
+var staticCacheName = 'ifast-v3';
 
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(staticCache).then(cache => {
+    caches.open(staticCacheName).then(cache => {
       return cache.addAll([
         '/',
         '/index.html',
@@ -19,12 +19,12 @@ self.addEventListener('install', e => {
   )
 });
 
-self.addEventListener('activate',  event => {
+self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.filter(function(cacheName) {
-          return cacheName.startsWith('ifast-') && cacheName != staticCache
+          return cacheName.startsWith('ifast') && cacheName != staticCacheName;
         }).map(function(cacheName) {
           return caches.delete(cacheName);
         })

@@ -24,10 +24,13 @@ header h1 {
   margin: 1em;
 }
 .dashboard {
-  font-size: 1.4em;
-  line-height: 3em;
+  font-size: 1.2em;
+  line-height: 1.6em;
 }
 .sub {
   font-size: 0.8em;
   color: silver;
+}
+table{
+  width: 100%;
 }

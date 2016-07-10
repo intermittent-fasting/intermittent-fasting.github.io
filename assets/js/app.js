@@ -1,5 +1,5 @@
 window.appVersion = '0.0.1';
-window.appCommit = '3ed0195';
+window.appCommit = '46d255b';
 
 (function(context, $){
   'use strict';
