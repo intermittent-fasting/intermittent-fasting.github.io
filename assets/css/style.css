@@ -31,6 +31,22 @@ header h1 {
   font-size: 0.8em;
   color: silver;
 }
-table{
+.fw{
   width: 100%;
+}
+#meal{
+  background: #73d216;
+  font-size: 1.2em;
+  padding: .2em;
+  color: #fff;
+  border: 1px solid #cecece;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  will-change: box-shadow;
+  outline: none;
+  text-align: center;
+  line-height: 36px;
+  vertical-align: middle;
 }

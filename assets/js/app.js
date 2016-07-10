@@ -1,5 +1,5 @@
 window.appVersion = '0.0.1';
-window.appCommit = '46d255b';
+window.appCommit = '30dc82e';
 
 (function(context, $){
   'use strict';
@@ -15,7 +15,7 @@ window.appCommit = '46d255b';
   var $startTimeExact;
   var $endTime;
   var $endTimeExact;
-
+  var $meals;
 
   function getNext(now, time) {
     var timeArr = time.split(":");
@@ -82,6 +82,7 @@ window.appCommit = '46d255b';
     $startTimeExact = $('#startTimeExact');
     $endTime = $('#endTime');
     $endTimeExact = $('#endTimeExact');
+    $meals = $('#meals');
   }
 
   function loadConfig() {
@@ -108,6 +109,35 @@ window.appCommit = '46d255b';
     })
   }
 
+  function setupFoodLog() {
+    var db = new Dexie("ifast");
+    db.version(1).stores({ meal: '_id' })
+    db.open().then(function() {
+      refreshMeals(db);
+    });
+    $('#meal').click(function(event) {
+      event.preventDefault();
+      var date = new Date();
+      db.meal.put({ date: date, _id: date.getTime() })
+      .then(function() {
+        refreshMeals(db)
+      });
+    });
+  }
+
+  function refreshMeals(db) {
+    return db.meal.reverse().limit(30).toArray()
+      .then(renderAllMeals);
+  }
+
+  function renderAllMeals(meals) {
+    $meals.empty();
+    meals.forEach(function(meal) {
+      var mom = moment(meal.date)
+      $meals.append($('<tr><td>' + mom.format() + '</td><td>' + mom.fromNow() + '</td></tr>'))
+    });
+  }
+
   function init(context) {
     loadConfig();
     cacheElements();
@@ -117,7 +147,7 @@ window.appCommit = '46d255b';
     setInterval(function(){
       initTimers(moment());
     }, 10000);
-
+    setupFoodLog();
   }
 
   $(context.document).ready(function() {

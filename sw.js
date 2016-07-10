@@ -1,4 +1,4 @@
-var staticCacheName = 'ifast-v3';
+var staticCacheName = 'ifast-v4';
 
 self.addEventListener('install', e => {
   e.waitUntil(
@@ -11,6 +11,7 @@ self.addEventListener('install', e => {
         '/assets/css/style.css',
         '/assets/js/bower/jquery/dist/jquery.min.js',
         '/assets/js/bower/moment/moment.js',
+        '/assets/js/bower/dexie/dist/dexie.js',
         '/assets/js/app.js',
         '/sw.js'
       ])
